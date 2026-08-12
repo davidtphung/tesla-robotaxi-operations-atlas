@@ -27,6 +27,20 @@ The Next.js scripts use webpack (`--webpack`) so MapLibre’s worker bundle comp
 
 Open [http://localhost:3000](http://localhost:3000). No API keys are required.
 
+## Live
+
+- Production: [https://tesla-robotaxi-operations-atlas.vercel.app](https://tesla-robotaxi-operations-atlas.vercel.app)
+- Custom domain (pending DNS): [https://robotaxi.davidtphung.com](https://robotaxi.davidtphung.com)
+- Source: [https://github.com/davidtphung/tesla-robotaxi-operations-atlas](https://github.com/davidtphung/tesla-robotaxi-operations-atlas)
+
+To finish `robotaxi.davidtphung.com`, add this record at GoDaddy (nameservers are `domaincontrol.com`):
+
+| Type | Name | Value |
+| --- | --- | --- |
+| CNAME | `robotaxi` | `cname.vercel-dns.com` |
+
+That matches how `elnino.davidtphung.com` is configured.
+
 ```bash
 npm run build
 npm start
