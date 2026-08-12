@@ -1,0 +1,92 @@
+[
+  {
+    "id": "austin",
+    "city": "Austin",
+    "state": "Texas",
+    "displayStatus": "ACTIVE",
+    "operatingMode": "DRIVERLESS_REPORTED",
+    "fleetCount": null,
+    "officialBoundaryAvailable": false
+  },
+  {
+    "id": "dallas",
+    "city": "Dallas",
+    "state": "Texas",
+    "displayStatus": "ACTIVE",
+    "operatingMode": "DRIVERLESS_REPORTED",
+    "fleetCount": null,
+    "officialBoundaryAvailable": false
+  },
+  {
+    "id": "houston",
+    "city": "Houston",
+    "state": "Texas",
+    "displayStatus": "ACTIVE",
+    "operatingMode": "DRIVERLESS_REPORTED",
+    "fleetCount": null,
+    "officialBoundaryAvailable": false
+  },
+  {
+    "id": "miami",
+    "city": "Miami",
+    "state": "Florida",
+    "displayStatus": "ACTIVE",
+    "operatingMode": "DRIVERLESS_REPORTED",
+    "fleetCount": null,
+    "officialBoundaryAvailable": false
+  },
+  {
+    "id": "orlando",
+    "city": "Orlando",
+    "state": "Florida",
+    "displayStatus": "PLANNED",
+    "operatingMode": "PLANNED",
+    "fleetCount": null,
+    "officialBoundaryAvailable": false
+  },
+  {
+    "id": "tampa",
+    "city": "Tampa",
+    "state": "Florida",
+    "displayStatus": "PLANNED",
+    "operatingMode": "PLANNED",
+    "fleetCount": null,
+    "officialBoundaryAvailable": false
+  },
+  {
+    "id": "sf-bay",
+    "city": "San Francisco Bay Area",
+    "state": "California",
+    "displayStatus": "SUPERVISED",
+    "operatingMode": "SAFETY_DRIVER",
+    "fleetCount": null,
+    "officialBoundaryAvailable": false
+  },
+  {
+    "id": "sjc",
+    "city": "San Jose Airport",
+    "state": "California",
+    "displayStatus": "SUPERVISED",
+    "operatingMode": "SAFETY_DRIVER",
+    "fleetCount": null,
+    "officialBoundaryAvailable": false
+  },
+  {
+    "id": "phoenix",
+    "city": "Phoenix",
+    "state": "Arizona",
+    "displayStatus": "PLANNED",
+    "operatingMode": "PLANNED",
+    "fleetCount": null,
+    "officialBoundaryAvailable": false
+  },
+  {
+    "id": "las-vegas",
+    "city": "Las Vegas",
+    "state": "Nevada",
+    "displayStatus": "PLANNED",
+    "operatingMode": "PLANNED",
+    "fleetCount": null,
+    "officialBoundaryAvailable": false
+  }
+]

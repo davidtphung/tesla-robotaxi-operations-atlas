@@ -1,0 +1,38 @@
+[
+  {
+    "id": "tesla-q4-2025-update",
+    "publisher": "Tesla, Inc.",
+    "title": "Q4 and FY 2025 Update",
+    "url": "https://assets-ir.tesla.com/tesla-contents/IR/TSLA-Q4-2025-Update.pdf",
+    "publishedAt": "2026-01-28",
+    "accessedAt": "2026-08-12",
+    "evidenceClass": "VERIFIED"
+  },
+  {
+    "id": "tesla-robotaxi-support",
+    "publisher": "Tesla, Inc.",
+    "title": "Robotaxi Support",
+    "url": "https://www.tesla.com/support/robotaxi",
+    "publishedAt": "2026-01-01",
+    "accessedAt": "2026-08-12",
+    "evidenceClass": "VERIFIED"
+  },
+  {
+    "id": "tesla-legal-terms",
+    "publisher": "Tesla, Inc.",
+    "title": "Terms of Use — Robotaxi",
+    "url": "https://www.tesla.com/legal/terms",
+    "publishedAt": "2026-01-01",
+    "accessedAt": "2026-08-12",
+    "evidenceClass": "VERIFIED"
+  },
+  {
+    "id": "tesla-robotaxi-marketing",
+    "publisher": "Tesla, Inc.",
+    "title": "Robotaxi product page",
+    "url": "https://www.tesla.com/robotaxi",
+    "publishedAt": "2026-08-01",
+    "accessedAt": "2026-08-12",
+    "evidenceClass": "VERIFIED"
+  }
+]

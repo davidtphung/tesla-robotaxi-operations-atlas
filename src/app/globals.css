@@ -1,0 +1,250 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-heading: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-atlas-red: var(--atlas-red);
+  --color-atlas-green: var(--atlas-green);
+  --color-atlas-amber: var(--atlas-amber);
+  --color-atlas-blue: var(--atlas-blue);
+  --color-atlas-ink: var(--atlas-ink);
+  --color-atlas-graphite: var(--atlas-graphite);
+  --color-atlas-warm: var(--atlas-warm);
+  --color-atlas-quiet: var(--atlas-quiet);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --atlas-red: #e82127;
+  --atlas-green: #35c759;
+  --atlas-amber: #ff9f0a;
+  --atlas-blue: #0a84ff;
+  --atlas-ink: #090a0c;
+  --atlas-graphite: #15171b;
+  --atlas-warm: #f5f5f7;
+  --atlas-quiet: #71717a;
+  --background: #f4f4f6;
+  --foreground: #1d1d1f;
+  --card: #ffffff;
+  --card-foreground: #1d1d1f;
+  --popover: #ffffff;
+  --popover-foreground: #1d1d1f;
+  --primary: #e82127;
+  --primary-foreground: #fff7f7;
+  --secondary: #ececee;
+  --secondary-foreground: #1d1d1f;
+  --muted: #ececee;
+  --muted-foreground: #6e6e73;
+  --accent: #ececee;
+  --accent-foreground: #1d1d1f;
+  --destructive: #e82127;
+  --border: rgb(0 0 0 / 8%);
+  --input: rgb(0 0 0 / 10%);
+  --ring: #0a84ff;
+  --chart-1: #e82127;
+  --chart-2: #0a84ff;
+  --chart-3: #35c759;
+  --chart-4: #ff9f0a;
+  --chart-5: #71717a;
+  --radius: 1rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1d1d1f;
+  --sidebar-primary: #e82127;
+  --sidebar-primary-foreground: #fff7f7;
+  --sidebar-accent: #f4f4f6;
+  --sidebar-accent-foreground: #1d1d1f;
+  --sidebar-border: rgb(0 0 0 / 8%);
+  --sidebar-ring: #0a84ff;
+  --atlas-glass: rgb(255 255 255 / 78%);
+  --atlas-hairline: rgb(0 0 0 / 8%);
+  --atlas-shadow: 0 10px 40px rgb(15 17 21 / 10%);
+}
+
+.dark {
+  --background: #090a0c;
+  --foreground: #f5f5f7;
+  --card: #15171b;
+  --card-foreground: #f5f5f7;
+  --popover: #15171b;
+  --popover-foreground: #f5f5f7;
+  --primary: #e82127;
+  --primary-foreground: #fff7f7;
+  --secondary: #1c1e23;
+  --secondary-foreground: #f5f5f7;
+  --muted: #1c1e23;
+  --muted-foreground: #a1a1aa;
+  --accent: #1c1e23;
+  --accent-foreground: #f5f5f7;
+  --destructive: #e82127;
+  --border: rgb(255 255 255 / 8%);
+  --input: rgb(255 255 255 / 10%);
+  --ring: #0a84ff;
+  --chart-1: #e82127;
+  --chart-2: #0a84ff;
+  --chart-3: #35c759;
+  --chart-4: #ff9f0a;
+  --chart-5: #a1a1aa;
+  --sidebar: #0d0f13;
+  --sidebar-foreground: #f5f5f7;
+  --sidebar-primary: #e82127;
+  --sidebar-primary-foreground: #fff7f7;
+  --sidebar-accent: #1c1e23;
+  --sidebar-accent-foreground: #f5f5f7;
+  --sidebar-border: rgb(255 255 255 / 8%);
+  --sidebar-ring: #0a84ff;
+  --atlas-glass: rgb(21 23 27 / 78%);
+  --atlas-hairline: rgb(255 255 255 / 9%);
+  --atlas-shadow: 0 16px 48px rgb(0 0 0 / 36%);
+}
+
+@media (max-width: 767px) {
+  :root {
+    --radius: 0.875rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply font-sans;
+    text-rendering: optimizeLegibility;
+    hanging-punctuation: first last;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01" on, "cv11" on;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--atlas-blue);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--atlas-red) 28%, transparent);
+    color: var(--foreground);
+  }
+}
+
+.atlas-glass {
+  background: var(--atlas-glass);
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  border: 1px solid var(--atlas-hairline);
+  box-shadow: var(--atlas-shadow);
+}
+
+.atlas-hairline {
+  border: 1px solid var(--atlas-hairline);
+}
+
+.atlas-motion {
+  transition-property: transform, opacity, background-color, border-color, color, box-shadow, width, height, max-height;
+  transition-duration: 220ms;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.high-contrast {
+  --muted-foreground: var(--foreground);
+  --atlas-hairline: color-mix(in srgb, var(--foreground) 28%, transparent);
+}
+
+.large-text {
+  font-size: 112.5%;
+}
+
+.maplibregl-ctrl-attrib,
+.maplibregl-ctrl-attrib a {
+  font-size: 10px;
+  color: var(--muted-foreground) !important;
+}
+
+.maplibregl-ctrl-attrib.maplibregl-compact {
+  background: var(--atlas-glass) !important;
+}
+
+.maplibregl-popup-content {
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+.maplibregl-popup-tip {
+  display: none;
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -40px;
+  z-index: 80;
+  border-radius: 12px;
+  background: var(--atlas-red);
+  color: white;
+  padding: 10px 14px;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .atlas-motion,
+  .atlas-motion * {
+    transition-duration: 1ms !important;
+    animation-duration: 1ms !important;
+  }
+}
+
+@media (min-width: 320px) {
+  .atlas-safe {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+}
