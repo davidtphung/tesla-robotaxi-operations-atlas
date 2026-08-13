@@ -11,9 +11,12 @@ import { MobileTabBar } from "@/components/atlas/mobile-tab-bar";
 import { useUrlState } from "@/hooks/use-url-state";
 import { useDashboard } from "@/lib/store";
 import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   useUrlState();
+  const pathname = usePathname();
+  const isMap = pathname === "/";
   const largeText = useDashboard((state) => state.largeText);
   const highContrast = useDashboard((state) => state.highContrast);
   const statusMessage = useDashboard((state) => state.statusMessage);
@@ -78,18 +81,32 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         Skip to content
       </a>
       <div className="flex min-h-0 flex-1">
-        <DesktopSidebar />
+        {isMap ? null : <DesktopSidebar />}
         <div className="flex min-w-0 flex-1 flex-col">
-          <CommandBar />
-          <main id="main" className="relative flex min-h-0 flex-1 flex-col pb-16 lg:pb-0">
+          {isMap ? null : <CommandBar />}
+          <main
+            id="main"
+            className={cn(
+              "relative flex min-h-0 flex-1 flex-col",
+              isMap ? "pb-14 lg:pb-0" : "pb-16 lg:pb-0",
+            )}
+          >
             {children}
           </main>
-          <div className="hidden lg:block">
-            <FooterDisclosure compact />
-          </div>
+          {isMap ? null : (
+            <div className="hidden lg:block">
+              <FooterDisclosure compact />
+            </div>
+          )}
         </div>
       </div>
-      <MobileTabBar />
+      {isMap ? (
+        <div className="lg:hidden">
+          <MobileTabBar />
+        </div>
+      ) : (
+        <MobileTabBar />
+      )}
       <CommandPalette />
       <AccessibilitySettings />
       <MarketComparison />

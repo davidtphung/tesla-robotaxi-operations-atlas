@@ -30,9 +30,9 @@ export const SIMULATION_DISCLAIMER =
 export const DEFAULT_LAYERS: LayerState = {
   coverage: true,
   cityStatus: true,
-  vehicles: true,
-  charging: true,
-  airports: true,
+  vehicles: false,
+  charging: false,
+  airports: false,
   regulation: false,
   traffic: false,
   satellite: false,

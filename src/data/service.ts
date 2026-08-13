@@ -15,7 +15,7 @@ function parseMarkets(input: RobotaxiMarket[]) {
   const result = RobotaxiMarketSchema.array().safeParse(input);
   if (!result.success) {
     console.error("Market seed failed validation", result.error);
-    return [] as RobotaxiMarket[];
+    return input;
   }
   return result.data;
 }

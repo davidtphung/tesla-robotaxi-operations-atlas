@@ -1,4 +1,5 @@
 import type { Feature, FeatureCollection, Point, Polygon } from "geojson";
+import { geofenceByMarketId } from "@/data/geofences";
 import type { RobotaxiMarket } from "@/lib/types";
 
 export function hexagonRing(
@@ -20,6 +21,10 @@ export function hexagonRing(
   return ring;
 }
 
+export function zoneRingForMarket(market: RobotaxiMarket): [number, number][] {
+  return geofenceByMarketId[market.id]?.ring ?? hexagonRing(market.center, market.zoneRadiusKm);
+}
+
 export function makeIllustrativeZone(
   market: RobotaxiMarket,
 ): Feature<Polygon, { marketId: string; illustrative: true }> {
@@ -28,14 +33,17 @@ export function makeIllustrativeZone(
     properties: { marketId: market.id, illustrative: true },
     geometry: {
       type: "Polygon",
-      coordinates: [hexagonRing(market.center, market.zoneRadiusKm)],
+      coordinates: [zoneRingForMarket(market)],
     },
   };
 }
 
 export function marketsToZoneCollection(
   markets: RobotaxiMarket[],
-): FeatureCollection<Polygon, { marketId: string; illustrative: true; status: string }> {
+): FeatureCollection<
+  Polygon,
+  { marketId: string; illustrative: true; status: string; name: string }
+> {
   return {
     type: "FeatureCollection",
     features: markets.map((market) => ({
@@ -44,10 +52,11 @@ export function marketsToZoneCollection(
         marketId: market.id,
         illustrative: true,
         status: market.displayStatus,
+        name: market.city,
       },
       geometry: {
         type: "Polygon",
-        coordinates: [hexagonRing(market.center, market.zoneRadiusKm)],
+        coordinates: [zoneRingForMarket(market)],
       },
     })),
   };

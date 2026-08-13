@@ -20,7 +20,7 @@ export function MobileTabBar() {
   return (
     <nav
       aria-label="Primary"
-      className="atlas-glass fixed inset-x-0 bottom-0 z-40 grid grid-cols-5 border-t border-border pb-[max(0.4rem,env(safe-area-inset-bottom))] lg:hidden"
+      className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-5 bg-[#090A0C]/80 pb-[max(0.35rem,env(safe-area-inset-bottom))] text-white lg:hidden"
     >
       {NAV_MOBILE.map((item) => {
         const Icon = icons[item.id];
@@ -32,7 +32,7 @@ export function MobileTabBar() {
             aria-current={active ? "page" : undefined}
             className={cn(
               "flex min-h-14 flex-col items-center justify-center gap-0.5 text-[11px]",
-              active ? "text-foreground" : "text-muted-foreground",
+              active ? "text-white" : "text-white/45",
             )}
           >
             <Icon className={cn("size-5", active && "text-atlas-red")} aria-hidden />

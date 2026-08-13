@@ -55,15 +55,15 @@ interface DashboardState {
 export const useDashboard = create<DashboardState>()(
   persist(
     (set, get) => ({
-      sidebarExpanded: true,
+      sidebarExpanded: false,
       selectedMarketId: null,
       selectedVehicleId: null,
       highlightedEventId: null,
       compareIds: [],
       compareOpen: false,
-      dataMode: "simulated",
+      dataMode: "reported",
       dateRange: "today",
-      playback: true,
+      playback: false,
       layers: DEFAULT_LAYERS,
       commandOpen: false,
       a11yOpen: false,
@@ -136,19 +136,7 @@ export const useDashboard = create<DashboardState>()(
         if (range && ["today", "7d", "30d", "launch"].includes(range)) {
           next.dateRange = range;
         }
-        if (layers) {
-          const enabled = new Set(layers.split(","));
-          next.layers = {
-            coverage: enabled.has("coverage"),
-            cityStatus: enabled.has("cityStatus"),
-            vehicles: enabled.has("vehicles"),
-            charging: enabled.has("charging"),
-            airports: enabled.has("airports"),
-            regulation: enabled.has("regulation"),
-            traffic: enabled.has("traffic"),
-            satellite: enabled.has("satellite"),
-          };
-        }
+        void layers;
         if (compare) {
           next.compareIds = compare
             .split(",")
@@ -160,13 +148,10 @@ export const useDashboard = create<DashboardState>()(
       },
     }),
     {
-      name: "atlas-prefs",
+      name: "atlas-prefs-v3",
       partialize: (state) => ({
-        sidebarExpanded: state.sidebarExpanded,
         largeText: state.largeText,
         highContrast: state.highContrast,
-        dataMode: state.dataMode,
-        layers: state.layers,
       }),
     },
   ),
@@ -175,13 +160,6 @@ export const useDashboard = create<DashboardState>()(
 export function serializeShareState(state: DashboardState) {
   const params = new URLSearchParams();
   if (state.selectedMarketId) params.set("market", state.selectedMarketId);
-  params.set("mode", state.dataMode);
-  params.set("range", state.dateRange);
-  const on = Object.entries(state.layers)
-    .filter(([, value]) => value)
-    .map(([key]) => key)
-    .join(",");
-  if (on) params.set("layers", on);
   if (state.compareIds.length) params.set("compare", state.compareIds.join(","));
   return params.toString();
 }

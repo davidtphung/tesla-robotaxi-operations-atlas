@@ -17,6 +17,7 @@ export function rasterStyle(theme: "dark" | "light"): StyleSpecification {
   return {
     version: 8,
     name: theme === "dark" ? "Atlas Dark Raster" : "Atlas Light Raster",
+    glyphs: "https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf",
     sources: {
       carto: {
         type: "raster",
@@ -38,8 +39,7 @@ export function rasterStyle(theme: "dark" | "light"): StyleSpecification {
         type: "raster",
         source: "carto",
         paint: {
-          "raster-opacity": theme === "dark" ? 0.88 : 0.92,
-          "raster-saturation": theme === "dark" ? -0.18 : -0.05,
+          "raster-opacity": theme === "dark" ? 0.9 : 0.94,
         },
       },
     ],
